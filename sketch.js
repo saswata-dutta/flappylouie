@@ -58,6 +58,6 @@ function keyPressed() {
     } else if (keyCode === ENTER) {
         bird = new Bird();
         pipes = [];
-        let score = 0;
+        score = 0;
     } 
 }
