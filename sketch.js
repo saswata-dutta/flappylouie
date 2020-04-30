@@ -2,9 +2,14 @@ let bird;
 let pipes = [];
 let louie;
 let score = 0;
+let bgImage;
+
+function preload() {
+    bgImage = loadImage('assets/background.png');
+}
 
 function setup() {
-    createCanvas(500, 700);
+    createCanvas(600, 700);
 
     
     bird = new Bird('louie');
@@ -12,7 +17,7 @@ function setup() {
 }
 
 function draw() {
-    background(112,197, 206);
+    background(bgImage);
     textSize(10)
     instructions = text('Instructions:', 10, 50);
     space = text('Press Space to Jump', 10, 80);
