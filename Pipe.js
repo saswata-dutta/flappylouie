@@ -8,6 +8,7 @@ class Pipe {
         this.r = 255;
         this.g = 255;
         this.b = 255;
+        this.done = false;
     }
 
     move() {
@@ -30,5 +31,12 @@ class Pipe {
                 bird.dead();
             }
         }
+    }
+    
+    crossed(bird) {
+        if(bird.x - bird.radius > this.x + this.w) {
+            return true;
+        }
+        return false;
     }
 }

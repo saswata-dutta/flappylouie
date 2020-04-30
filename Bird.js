@@ -34,7 +34,7 @@ class Bird {
     dead() {
         this.birdDead = true;
         this.velocity = 0;
-        this.gravity = 10;
+        this.gravity = 1.5;
         this.lift = 0;
     }
 
