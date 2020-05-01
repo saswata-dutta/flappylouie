@@ -7,15 +7,17 @@ let tPipe;
 let bPipe;
 let gameStart = false;
 
+
 function preload() {
     bgImage = loadImage('assets/background.png');
     tPipe = loadImage('assets/top.png');
     bPipe = loadImage('assets/bottom.png');
+    louie = loadImage('assets/louie.png');
 }
 
 function setup() {
     createCanvas(600, 700);
-    bird = new Bird('louie');
+    bird = new Bird(louie);
 }
 
 function draw() {
@@ -53,9 +55,19 @@ function draw() {
         if(bird.birdDead) {
             textAlign(CENTER, CENTER);
             textSize(40);
-            text('YOU DEAD', width/2, height/2 - 10);
+            text('LOUIE FAINTED', width/2, height/2 - 10);
             textSize(30);
-            text(`Score: ${score}`, width/2, height/2 + 30);
+            text(`Treats: ${score}`, width/2, height/2 + 30);
+            textSize(10);
+            text(`Press Enter to Restart`, width/2, height/2 + 60);
+        } else if(!gameStart) {
+            textAlign(CENTER, CENTER);
+            textSize(30);
+            text("Welcome to FlappyLouie", width/2, height/2 - 150);
+            textSize(20);
+            text(`Help Louie get his Chicken Treats!`, width/2, height/2 - 110);
+            textSize(10);
+            text(`Press Space to Start`, width/2, height/2 - 80);
         }
     }  
     textAlign(LEFT)
@@ -72,7 +84,7 @@ function keyPressed() {
         }
         bird.jump();
     } else if (keyCode === ENTER) {
-        bird = new Bird();
+        bird = new Bird(louie);
         pipes = [];
         score = 0;
         gameStart = false;

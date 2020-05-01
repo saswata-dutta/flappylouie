@@ -5,7 +5,7 @@ class Bird {
         this.gravity = 0;
         this.lift = -0;
         this.velocity = 0;
-        this.radius = 12;
+        this.radius = 40;
         this.topPos = 0;
         this.bottomPos = 0;
         this.birdDead = false;
@@ -17,14 +17,14 @@ class Bird {
         this.velocity *= 0.95
         this.y += this.velocity;
 
-        if(this.y + this.radius >= height - 28) {
+        if(this.y + this.radius / 2 >= height - 28) {
             
             this.dead();
         }
 
-        this.y = constrain(this.y, 0 - this.radius * 3, height - 28 - this.radius)
-        this.topPos = this.y - this.radius;
-        this.bottomPos = this.y + this.radius;
+        this.y = constrain(this.y, 0 - this.radius / 2 * 3, height - 28 - this.radius / 2)
+        this.topPos = this.y - this.radius / 2;
+        this.bottomPos = this.y + this.radius / 2;
     }
 
     start() {
@@ -34,9 +34,12 @@ class Bird {
     }
 
     render() {
-        fill(0)
-        ellipseMode(RADIUS)
-        ellipse(this.x, this.y, this.radius);
+        push();
+        imageMode(CENTER)
+        image(this.img, this.x, this.y, this.radius, this.radius)
+        pop();
+        // ellipseMode(RADIUS)
+        // ellipse(this.x, this.y, this.radius);
     }
 
     dead() {

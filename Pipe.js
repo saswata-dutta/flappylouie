@@ -16,11 +16,9 @@ class Pipe {
     }
 
     show() { 
-        // image(img, x, y, width, height)
-        push(); 
+        // image(img, x, y, width, height) 
         image(this.tPipe, this.x, 0, this.w, this.top)
         image(this.bPipe, this.x, this.bottom, this.w, height - this.bottom - this.ground)
-        pop();
         // rect(this.x, this.bottom, this.w, height - this.bottom - this.ground )
     }
 
@@ -30,14 +28,14 @@ class Pipe {
 
     collide(bird) {
         if(bird.topPos <= this.top || bird.bottomPos >= this.bottom) {
-            if(bird.x + bird.radius > this.x && bird.x - bird.radius < this.x + this.w) {
+            if(bird.x + bird.radius / 2 > this.x && bird.x - bird.radius /2 < this.x + this.w) {
                 bird.dead();
             }
         }
     }
     
     crossed(bird) {
-        if(bird.x - bird.radius > this.x + this.w) {
+        if(bird.x - bird.radius / 2 > this.x + this.w) {
             return true;
         }
         return false;
