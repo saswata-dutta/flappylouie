@@ -1,24 +1,27 @@
 class Pipe {
-    constructor() {
+    constructor(tPipe, bPipe) {
         this.height = 130;
-        this.top = random(this.height + 20, height - this.height - 20);
-        this.bottom = this.top + this.height;
         this.x = width;
         this.w = 40;
-        this.r = 255;
-        this.g = 255;
-        this.b = 255;
         this.done = false;
+        this.ground = 28;
+        this.top = random(this.height + 20, height - this.height - 20 - this.ground);
+        this.bottom = this.top + this.height;
+        this.tPipe = tPipe;
+        this.bPipe = bPipe;
     }
 
     move() {
         this.x -= 3;
     }
 
-    show() {
-        fill(this.r, this.g, this.b);
-        rect(this.x, 0, this.w, this.top)
-        rect(this.x, this.bottom, this.w, height)
+    show() { 
+        // image(img, x, y, width, height)
+        push(); 
+        image(this.tPipe, this.x, 0, this.w, this.top)
+        image(this.bPipe, this.x, this.bottom, this.w, height - this.bottom - this.ground)
+        pop();
+        // rect(this.x, this.bottom, this.w, height - this.bottom - this.ground )
     }
 
     offScreen() {
