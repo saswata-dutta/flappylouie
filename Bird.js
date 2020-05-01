@@ -23,8 +23,8 @@ class Bird {
         }
 
         this.y = constrain(this.y, 0 - this.radius / 2 * 3, height - 28 - this.radius / 2)
-        this.topPos = this.y - this.radius / 2;
-        this.bottomPos = this.y + this.radius / 2;
+        this.topPos = this.y - this.radius / 1.8;
+        this.bottomPos = this.y + this.radius / 1.8;
     }
 
     start() {
@@ -36,7 +36,7 @@ class Bird {
     render() {
         push();
         imageMode(CENTER)
-        image(this.img, this.x, this.y, this.radius, this.radius)
+        image(this.img, this.x, this.y, this.radius * 2, this.radius )
         pop();
         // ellipseMode(RADIUS)
         // ellipse(this.x, this.y, this.radius);

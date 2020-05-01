@@ -12,7 +12,7 @@ function preload() {
     bgImage = loadImage('assets/background.png');
     tPipe = loadImage('assets/top.png');
     bPipe = loadImage('assets/bottom.png');
-    louie = loadImage('assets/louie.png');
+    louie = loadImage('assets/louie2.png');
 }
 
 function setup() {
