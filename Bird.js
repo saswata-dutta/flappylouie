@@ -17,12 +17,12 @@ class Bird {
         this.velocity *= 0.95
         this.y += this.velocity;
 
-        if(this.y + this.radius / 2 >= height - 28) {
+        if(this.y + this.radius / 2 >= height - 20) {
             
             this.dead();
         }
 
-        this.y = constrain(this.y, 0 - this.radius / 2 * 3, height - 28 - this.radius / 2)
+        this.y = constrain(this.y, 0 - this.radius / 2 * 3, height - 20 - this.radius / 2)
         this.topPos = this.y - this.radius / 1.8;
         this.bottomPos = this.y + this.radius / 1.8;
     }
