@@ -63,9 +63,9 @@ async function draw() {
                     } 
                 });
                 const myJson = await response.json();
-                score = score > myJson['output'] ? score : myJson['output']
+                let max_score = score > myJson['output'] ? score : myJson['output']
                 updated = true;
-                sessionStorage.setItem('score', score);
+                sessionStorage.setItem('score', max_score);
                 switchl();
                 populate();
             }
