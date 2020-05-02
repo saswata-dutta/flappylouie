@@ -14,7 +14,7 @@ let switchl = (function() {
 switchl();
 
 let populate = (async function() {
-    const response = await fetch(`http://ec2-13-229-240-134.ap-southeast-1.compute.amazonaws.com:8000/scoreboard`, {
+    const response = await fetch(`https://www.flappybirdbackendapi.ml/scoreboard`, {
     method: 'GET',
     headers: {
         'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ async function login() {
     }
     username = username.value
     password = password.value
-    const response = await fetch(`http://ec2-13-229-240-134.ap-southeast-1.compute.amazonaws.com:8000/login?username=${username}&password=${password}`, {
+    const response = await fetch(`https://www.flappybirdbackendapi.ml/login?username=${username}&password=${password}`, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'

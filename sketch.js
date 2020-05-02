@@ -56,7 +56,7 @@ async function draw() {
         if(bird.birdDead) {
             if(!updated && sessionStorage.getItem('logged') !== null) {
                 let u = sessionStorage.getItem('name')
-                const response = await fetch(`http://ec2-13-229-240-134.ap-southeast-1.compute.amazonaws.com:8000/update_score?username=${u}&score=${score}`, {
+                const response = await fetch(`https://www.flappybirdbackendapi.ml/update_score?username=${u}&score=${score}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
