@@ -21,3 +21,12 @@ body {
 #defaultCanvas0 {
   margin:auto;
 }
+
+table {
+  border-collapse: collapse;
+  width:300px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}

@@ -6,7 +6,7 @@ let bgImage;
 let tPipe;
 let bPipe;
 let gameStart = false;
-
+let updated = false;
 
 function preload() {
     bgImage = loadImage('assets/background.png');
@@ -16,11 +16,12 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(600, 500);
+    let canv = createCanvas(600, 500);
+    canv.parent('sketch_holder')
     bird = new Bird(louie);
 }
 
-function draw() {
+async function draw() {
     background(bgImage);
     textSize(10)
     instructions = text('Instructions:', 10, 50);
@@ -53,6 +54,21 @@ function draw() {
         bird.render();
 
         if(bird.birdDead) {
+            if(!updated && sessionStorage.getItem('logged') !== null) {
+                let u = sessionStorage.getItem('name')
+                const response = await fetch(`http://ec2-13-229-240-134.ap-southeast-1.compute.amazonaws.com:8000/update_score?username=${u}&score=${score}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    } 
+                });
+                const myJson = await response.json();
+                score = score > myJson['output'] ? score : myJson['output']
+                updated = true;
+                sessionStorage.setItem('score', score);
+                switchl();
+                populate();
+            }
             textAlign(CENTER, CENTER);
             textSize(40);
             text('LOUIE FAINTED', width/2, height/2 - 10);
@@ -88,5 +104,7 @@ function keyPressed() {
         pipes = [];
         score = 0;
         gameStart = false;
+        updated = false; 
+
     } 
 }
