@@ -12,5 +12,7 @@ Further work required to add AI to the game to try and learn how to play.
 
 ## Current Architecture
 
+With the inclusion of global leaderboards and login, I integrated the p5.js library with a backend API written in Python Flask
+
 ![architecture](/assets/architecture.png)
 
