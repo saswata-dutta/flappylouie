@@ -5,7 +5,7 @@ class Pipe {
         this.w = 40;
         this.done = false;
         this.ground = 20;
-        this.top = random(20, height - this.height - 20 - this.ground);
+        this.top = random(50, height - this.height - 30 - this.ground);
         this.bottom = this.top + this.height;
         this.tPipe = tPipe;
         this.bPipe = bPipe;
