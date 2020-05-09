@@ -16,7 +16,7 @@ function preload() {
 }
 
 function setup() {
-    let canv = createCanvas(600, 500);
+    let canv = createCanvas(600, 700);
     canv.parent('sketch_holder')
     bird = new Bird(louie);
 }
@@ -29,7 +29,7 @@ async function draw() {
     enter = text('Press Enter to Restart', 10, 110);
 
     if(gameStart && !bird.birdDead) {
-        if(frameCount % 75 == 0) {
+        if(frameCount % 85 == 0) {
             pipes.push(new Pipe(tPipe, bPipe))
         }
         for(let i = pipes.length - 1; i >= 0; i--) {

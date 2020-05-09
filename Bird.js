@@ -5,7 +5,7 @@ class Bird {
         this.gravity = 0;
         this.lift = -0;
         this.velocity = 0;
-        this.radius = 40;
+        this.radius = 35 ;
         this.topPos = 0;
         this.bottomPos = 0;
         this.birdDead = false;
@@ -38,8 +38,6 @@ class Bird {
         imageMode(CENTER)
         image(this.img, this.x, this.y, this.radius * 2, this.radius )
         pop();
-        // ellipseMode(RADIUS)
-        // ellipse(this.x, this.y, this.radius);
     }
 
     dead() {

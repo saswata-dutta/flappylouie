@@ -1,10 +1,10 @@
 let switchl = (function() {
     if(sessionStorage.getItem('logged') === null) {
-        document.querySelector('.loggedout').style.display='block'
+        document.querySelector('.loggedout').style.display='flex'
         document.querySelector('.loggedin').style.display='none'
     } else {
         document.querySelector('.loggedout').style.display='none'
-        document.querySelector('.loggedin').style.display='block'
+        document.querySelector('.loggedin').style.display='flex'
         let name = sessionStorage.getItem('name')
         let score = sessionStorage.getItem('score')
         document.getElementById('w').innerHTML = `Welcome ${name}`
