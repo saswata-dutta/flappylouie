@@ -1,8 +1,8 @@
 class Pipe {
     constructor(tPipe, bPipe) {
         this.height = 150;
-        this.x = width;
         this.w = 40;
+        this.x = width - this.w;
         this.done = false;
         this.ground = 20;
         this.top = random(50, height - this.height - 30 - this.ground);

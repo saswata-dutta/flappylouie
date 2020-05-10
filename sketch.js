@@ -19,6 +19,7 @@ function setup() {
     let canv = createCanvas(600, 700);
     canv.parent('sketch_holder')
     bird = new Bird(louie);
+    pipes.push(new Pipe(tPipe, bPipe));
 }
 
 async function draw() {
@@ -27,7 +28,6 @@ async function draw() {
     instructions = text('Instructions:', 10, 50);
     space = text('Press Space to Jump/Start', 10, 80);
     enter = text('Press Enter to Restart', 10, 110);
-
     if(gameStart && !bird.birdDead) {
         if(frameCount % 85 == 0) {
             pipes.push(new Pipe(tPipe, bPipe))
@@ -46,6 +46,7 @@ async function draw() {
         }
         bird.update();
         bird.render();
+        // bird.think(pipes);
     } else {
         for(let i = pipes.length - 1; i >= 0; i--) {
             pipes[i].show();
@@ -76,6 +77,7 @@ async function draw() {
             text(`Treats: ${score}`, width/2, height/2 + 30);
             textSize(10);
             text(`Press Enter to Restart`, width/2, height/2 + 60);
+            noLoop();
         } else if(!gameStart) {
             textAlign(CENTER, CENTER);
             textSize(30);
@@ -84,6 +86,7 @@ async function draw() {
             text(`Help Louie get his Chicken Treats!`, width/2, height/2 - 110);
             textSize(10);
             text(`Press Space to Start`, width/2, height/2 - 80);
+            noLoop();
         }
     }  
     textAlign(LEFT)
@@ -97,14 +100,22 @@ function keyPressed() {
         if(!gameStart) {
             gameStart = true;
             bird.start();
+            loop();
         }
         bird.jump();
     } else if (keyCode === ENTER) {
         bird = new Bird(louie);
+        let cont = bird.birdDead;
         pipes = [];
         score = 0;
         gameStart = false;
         updated = false; 
-
+        pipes.push(new Pipe(tPipe, bPipe));
+        frameCount = 1;
+        if(cont) {
+            noLoop();
+        } else {
+            draw();
+        }
     } 
 }
