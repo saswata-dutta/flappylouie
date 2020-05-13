@@ -1,6 +1,6 @@
 class Pipe {
     constructor(tPipe, bPipe) {
-        this.height = 150;
+        this.height = 180;
         this.w = 40;
         this.x = width - this.w;
         this.done = false;
@@ -29,15 +29,11 @@ class Pipe {
     collide(bird) {
         if(bird.topPos <= this.top || bird.bottomPos >= this.bottom) {
             if(bird.x + bird.radius  > this.x && bird.x - bird.radius < this.x + this.w) {
-                bird.dead();
+                // bird.dead();
+                return true;
             }
         }
-    }
-    
-    crossed(bird) {
-        if(bird.x - bird.radius > this.x + this.w) {
-            return true;
-        }
+
         return false;
     }
 }

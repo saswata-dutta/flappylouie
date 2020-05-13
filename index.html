@@ -10,27 +10,37 @@
   <script src="libs/nn.js"></script>
   <script src="libs/matrix.js"></script>
   <script src="libs/ga.js"></script>
+  <script src="libs/game.js"></script>
   <script src="Bird.js"></script>
   <script src="Pipe.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet"> 
+  <link rel="icon" href="assets/louie.png">
+  <title>Play Flappy Louie - Huiyeon Kim</title>
 </head>
 
 <body>
+  <!-- <a href="watchtraining.html"> go</a> -->
   <div class="main">
-    <div class="logion" style="width:100%; display:flex; flex-direction: column; align-items: center;">
-      <div class="loggedout" style=" display:flex; flex-direction: column; align-items: center; justify-content:center; text-align: center; height:200px">
-        <h5 style="font-family: 'Amatic SC', cursive; font-size:30px; margin:0;">Login/Sign Up</h5>
-        <div style="display:flex; flex-direction:column; ">
-          <input type="text" name="username" id="username" placeholder="Enter Username">
-          <input type="password" name="password" id="password" placeholder="Enter Password">
+    <div class="logion" style="height:100%;width:100%; display:flex; flex-direction: column; align-items: center;">
+      <div class="loggedout" style="height:100%; width:100%; display:flex; flex-direction: column; align-items: center; justify-content:space-evenly; text-align: center;">
+        <h5 style="font-family: 'Amatic SC', cursive; font-size:40px; margin:0;">Login/Sign Up</h5>
+        <div style="width: 70%; display:flex; flex-direction:column;">
+          <input style="height:50px; margin-bottom:10px;" type="text" name="username" id="username" placeholder="Enter Username">
+          <input style="height:50px; margin-bottom:10px;" type="password" name="password" id="password" placeholder="Enter Password">
           <button onclick="login()">Login/Sign Up</button>
         </div>
       </div>
-      <div class='loggedin' style=" display:flex; flex-direction: column; align-items: center; justify-content:center; text-align: center;">
+      <div class='loggedin' style="height:100%; display:flex; flex-direction: column; align-items: center; justify-content:center; text-align: center;">
         <h4 id='w' style="font-family: 'Amatic SC', cursive; font-size:60px; margin:0;margin-bottom: 20px;">Welcome Hello</h5>
         <h5 id='s' style="font-family: 'Amatic SC', cursive; font-size:40px; margin:0; margin-bottom: 20px;">Your Max Score: 10</h6>
         <button onclick="logout()">Logout</button>
+      </div>
+      <div style="height:80%; width:100%; display:flex; flex-direction: column; align-items: center; justify-content:space-around; text-align: center; margin:0;">
+        <h5 style="font-family: 'Amatic SC', cursive; font-size:40px; margin:0;">Game Modes</h5>
+        <button style="width:300px; height: 50px; font-size: 30px; letter-spacing: 2px;" onclick="location.href='/watchtraining.html'">Watch AI Training</button>
+        <button style="width:300px; height: 50px; font-size: 30px; letter-spacing: 2px;" onclick="alert('Coming Soon')">Run Best Louie</button>
+        <!-- <a href="logout()">Logout</a> -->
       </div>
     </div>
     <div style="display:flex; flex-direction: column; align-items: center; justify-content:space-evenly; height:100%;width:100%;">
@@ -54,6 +64,6 @@
       </table>
     </div>
   </div>
-<script src="api.js"></script>
+<script src="libs/api.js"></script>
 </body>
 </html>
