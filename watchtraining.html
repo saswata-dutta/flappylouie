@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="style.css">
+  <script src="sketch.js"></script>
+  <script src="libs/nn.js"></script>
+  <script src="libs/matrix.js"></script>
+  <script src="libs/ga.js"></script>
+  <script src="libs/network.js"></script>
+  <script src="Bird.js"></script>
+  <script src="Pipe.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet"> 
+  <link rel="icon" href="assets/louie.png">
+  <title>Train Flappy Louie - Huiyeon Kim</title>
+</head>
+
+<body>
+  <div class="main">
+    <div class="logion" style="width:100%; height:100%; display:flex; flex-direction: column; align-items: center;">
+      <div class="loggedout" style=" display:flex; flex-direction: column; align-items: center; justify-content:space-evenly; text-align: center; height:100%">
+        <div>
+          <h2 style="font-family: 'Amatic SC', cursive; font-size:40px; margin:0;">Brain of the Current Best Louie</h2>
+          <div id="network_holder"></div>
+        </div>
+        <div>
+          <h5 style="font-size:30px; margin-bottom: 10px;">Change Training Speed</h5>
+          <input oninput="updateSlider(this.value)" type="range" min="1" max="50" value="1" style="width:300px">
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction: column; align-items: center; justify-content:space-evenly; height:100%;width:100%;">
+      <h1 style="text-align: center; font-size: 50px; margin:0; font-family: 'Amatic SC', cursive;">FlappyLouie By Huiyeon Kim</h1>
+      <div id="sketch_holder"></div>
+      <div style="display: flex; justify-content: space-evenly; width:200px; margin-bottom:10px">
+        <a href="https://www.linkedin.com/in/huiyeonkim/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/huiyeon5/flappylouie" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div style="padding-left:50px;width:100%; display:flex; flex-direction: column; align-items: start; justify-content: space-evenly; height:90%">
+      <h4 style="font-family: 'Amatic SC', cursive; font-size:50px; margin:0;">Neuro-Evolution Information</h4>
+      <div>
+        <p>Current Generation: <span class='gen'>0</span></p>
+        <p>Remaining Birds: <span class='rem'></span></p>
+        <p>Best Fitness Score: <span class='best'>0</span></p>
+      </div>
+      <button style="width:300px; height: 50px; font-size: 30px; letter-spacing: 2px;" onclick="location.href='index.html'">Go Back to Main Game</button>
+    </div>
+  </div>
+</body>
+</html>

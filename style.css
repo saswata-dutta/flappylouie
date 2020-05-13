@@ -1,16 +1,12 @@
 
-.stats, .all, .best {
-  font-family: "Courier";
+* {
+  font-family: 'Amatic SC', cursive;
 }
 
-.best {
-  font-size: 48px;
+p {
+  font-size: 30px;
 }
 
-.stats {
-  position:absolute;
-  font-size: 18px;
-}
 a {
   font-family: 'Amatic SC', cursive;
   font-size: 25px;
@@ -23,6 +19,7 @@ body {
   width:100vw; 
   height: 100vh;
   background:linear-gradient(185deg, #fc5c7d, #6a82fb);;
+  /* background: linear-gradient(to right, #673ab7, #512da8); */
 }
 
 .main {
