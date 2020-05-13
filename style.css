@@ -30,8 +30,8 @@ body {
   display:flex; 
   justify-content: space-evenly; 
   align-items: center; 
-  height:90%; 
-  width:90%; 
+  height:95%; 
+  width:95%; 
   background:white;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   border-radius: 4px;

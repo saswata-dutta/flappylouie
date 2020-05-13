@@ -7,7 +7,7 @@ function network(p) { // p could be any variable name
     let w = false;
     let b = null;
     p.setup = function() {
-      p.createCanvas(400, 400);
+      p.createCanvas(350, 350);
     };
   
     p.draw = function() {
@@ -67,9 +67,9 @@ function network(p) { // p could be any variable name
         
         for(let i = 0; i < nodes[1]; i++) {
             for(let j = 0; j < nodes[0]; j++) {
-                let val = b === 1 ? ih : 4 * ih[j][i];
-                if(val <= 0) {
-                    val = 0.25;
+                let val = b === 1 ? ih : 6.5 * ih[j][i];
+                if(val <= 1) {
+                    val = 1;
                 }
                 p.strokeWeight(val);
                 p.stroke(130, 124, 230);
@@ -91,9 +91,9 @@ function network(p) { // p could be any variable name
         
         for(let i = 0; i < nodes[1]; i++) {
             for(let j = 0; j < nodes[2]; j++) {
-                let val = b === 1 ? ho : 4 * ho[j][i];
-                if(val <= 0) {
-                    val = 0.3;
+                let val = b === 1 ? ho : (ho[j][i] * 6.5);
+                if(val <= 1) {
+                    val = 1;
                 }
                 p.strokeWeight(val);
                 p.stroke(130, 124, 230);

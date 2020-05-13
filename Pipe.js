@@ -1,6 +1,6 @@
 class Pipe {
     constructor(tPipe, bPipe) {
-        this.height = 180;
+        this.height = 160;
         this.w = 40;
         this.x = width - this.w;
         this.done = false;
