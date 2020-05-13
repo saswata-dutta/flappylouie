@@ -17,7 +17,7 @@ function preload() {
 }
 
 function setup() {
-    let canv = createCanvas(600, 700);
+    let canv = createCanvas(600, 600);
     canv.parent('sketch_holder')
     setUpGame();
 }

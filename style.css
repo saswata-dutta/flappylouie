@@ -43,16 +43,16 @@ body {
 
 table {
   border-collapse: collapse;
-  width:300px;
+  width:250px;
   border-left: 1px solid #ECF0F1;
   border-right: 1px solid #ECF0F1;
 }
 
 td, th{
   border-top: 1px solid #ECF0F1;
-  padding: 10px;
+  padding: 5px;
   font-family: 'Shadows Into Light', cursive;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 td{
