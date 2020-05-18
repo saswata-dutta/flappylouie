@@ -20,6 +20,11 @@
 </head>
 
 <body>
+  <div id="no" style="position:relative; width:100vw; height:100vh; background:rgba(0,0,0,0.5); display:flex; justify-content:center; align-items:center">
+    <div style="width:90%; height:50%; display:flex; justify-content:center; align-items:center">
+      <span style="font-size: 90px; color:white;">Please use the app using a Desktop Browser.</span>
+    </div>
+  </div>
   <div class="main">
     <div class="logion" style="width:100%; height:100%; display:flex; flex-direction: column; align-items: center;">
       <div class="loggedout" style=" display:flex; flex-direction: column; align-items: center; justify-content:space-evenly; text-align: center; height:100%">
@@ -51,5 +56,23 @@
       <button style="width:300px; height: 50px; font-size: 30px; letter-spacing: 2px;" onclick="location.href='index.html'">Go Back to Main Game</button>
     </div>
   </div>
+  <script>
+    let switchl = (function() {
+    if (navigator.userAgent.match(/Android/i) 
+        || navigator.userAgent.match(/webOS/i) 
+        || navigator.userAgent.match(/iPhone/i)  
+        || navigator.userAgent.match(/iPad/i)  
+        || navigator.userAgent.match(/iPod/i) 
+        || navigator.userAgent.match(/BlackBerry/i) 
+        || navigator.userAgent.match(/Windows Phone/i)) { 
+        a = true; 
+        document.querySelector('#no').style.display='flex'
+    } else { 
+        document.querySelector('#no').style.display='none'
+        a = false; 
+       } 
+    });
+    switchl();
+  </script>
 </body>
 </html>
